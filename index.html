@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="description" content="Naveed Ahmad — Digital Marketing Manager, Performance Marketing & E-commerce specialist based in Johar Town, Lahore. Shopify store development, paid ads management and e-commerce operations for Pakistan, UAE and USA markets." />
+<link rel="icon" href="data:," />
+<title>Naveed Ahmad — Digital Marketing Manager | Performance Marketing & E-commerce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0B0E13;
+    --bg-2:#0F1319;
+    --surface:#141922;
+    --surface-2:#1A202C;
+    --line:#242C3A;
+    --line-soft:#1C232F;
+    --text:#EEF1F5;
+    --muted:#A7B0BE;
+    --muted-2:#7E8898;
+    --gold:#D9A441;
+    --gold-2:#F0BE5A;
+    --gold-soft:rgba(217,164,65,.12);
+    --green:#25D366;
+    --radius:14px;
+    --font-display:"Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-body:"Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html:focus-within{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--gold); color:#14100A}
+  a{color:inherit}
+  img,svg{display:block}
+  button, a.btn, .chip-link{min-height:44px}
+  :focus-visible{outline:2px solid var(--gold-2); outline-offset:3px; border-radius:6px}
+
+  .wrap{width:min(1120px, 100% - 40px); margin-inline:auto}
+  @media (max-width:560px){ .wrap{width:calc(100% - 32px)} }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(900px 480px at 85% -10%, rgba(217,164,65,.14), transparent 60%),
+      radial-gradient(700px 500px at -10% 110%, rgba(217,164,65,.06), transparent 55%),
+      var(--bg-2);
+    border-bottom:1px solid var(--line-soft);
+    overflow:hidden;
+  }
+  .hero-grid-bg{
+    position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background-image:linear-gradient(var(--line-soft) 1px, transparent 1px), linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size:56px 56px;
+    -webkit-mask-image:radial-gradient(70% 60% at 70% 0%, #000 0%, transparent 100%);
+            mask-image:radial-gradient(70% 60% at 70% 0%, #000 0%, transparent 100%);
+  }
+  .hero-inner{position:relative; padding:56px 0 0}
+  @media (min-width:860px){ .hero-inner{padding:76px 0 0} }
+
+  .hero-top{
+    display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px;
+    font-family:var(--font-display); font-size:13px; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--muted);
+  }
+  .hero-top .dot{width:7px;height:7px;border-radius:50%;background:var(--gold); flex:none}
+  .hero-top .loc{color:var(--text)}
+  .avail{
+    margin-left:auto; display:inline-flex; align-items:center; gap:8px;
+    letter-spacing:.02em; text-transform:none; font-family:var(--font-body);
+    font-size:14px; font-weight:600; color:var(--text);
+    border:1px solid var(--line); background:rgba(20,25,34,.7);
+    padding:8px 14px; border-radius:999px; min-height:36px;
+  }
+  .avail i{width:8px;height:8px;border-radius:50%;background:#3ECF6E; flex:none; box-shadow:0 0 0 4px rgba(62,207,110,.15)}
+
+  h1{
+    font-family:var(--font-display);
+    font-size:clamp(44px, 9vw, 88px);
+    line-height:.98; letter-spacing:-.02em; font-weight:900;
+    margin:26px 0 0; text-transform:uppercase;
+  }
+  h1 .thin{display:block; color:transparent; -webkit-text-stroke:1.5px var(--gold); }
+  @supports not (-webkit-text-stroke:1px black){ h1 .thin{color:var(--gold)} }
+
+  .hero-title{
+    margin:20px 0 0; font-family:var(--font-display);
+    font-size:clamp(17px, 2.6vw, 22px); font-weight:700; letter-spacing:.01em;
+    color:var(--gold-2);
+  }
+  .hero-sub{
+    margin:14px 0 0; max-width:640px; color:var(--muted); font-size:18px; line-height:1.65;
+  }
+  .hero-sub strong{color:var(--text); font-weight:600}
+
+  .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:28px}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:9px;
+    font-family:var(--font-display); font-weight:700; font-size:15px;
+    text-decoration:none; border-radius:10px; padding:12px 20px;
+    border:1px solid transparent; cursor:pointer; transition:transform .15s ease, background .15s ease, border-color .15s ease;
+  }
+  .btn:active{transform:translateY(1px)}
+  .btn-wa{background:var(--green); color:#08130C}
+  .btn-wa:hover{background:#3BDE77}
+  .btn-gold{background:var(--gold); color:#171106}
+  .btn-gold:hover{background:var(--gold-2)}
+  .btn-ghost{background:transparent; color:var(--text); border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--gold); color:var(--gold-2)}
+  .btn svg{width:18px;height:18px;flex:none}
+
+  .hero-contact{
+    display:flex; flex-wrap:wrap; gap:8px 28px; margin-top:24px;
+    color:var(--muted); font-size:15.5px;
+  }
+  .hero-contact a{text-decoration:none; display:inline-flex; align-items:center; gap:8px; min-height:36px; padding:4px 0}
+  .hero-contact a:hover{color:var(--gold-2)}
+  .hero-contact svg{width:16px;height:16px;color:var(--gold); flex:none}
+
+  .stats{
+    margin-top:44px; border-top:1px solid var(--line-soft);
+    display:grid; grid-template-columns:repeat(4, 1fr);
+  }
+  .stat{padding:22px 20px 26px; border-left:1px solid var(--line-soft)}
+  .stat:first-child{border-left:none; padding-left:0}
+  .stat b{
+    display:block; font-family:var(--font-display); font-weight:800;
+    font-size:clamp(26px, 4vw, 38px); line-height:1; color:var(--text);
+  }
+  .stat b em{font-style:normal; color:var(--gold)}
+  .stat span{display:block; margin-top:8px; color:var(--muted); font-size:14.5px; line-height:1.45}
+  @media (max-width:760px){
+    .stats{grid-template-columns:1fr 1fr}
+    .stat{padding:18px 14px 20px}
+    .stat:nth-child(3){border-left:none; padding-left:0}
+    .stat:nth-child(n+3){border-top:1px solid var(--line-soft)}
+  }
+
+  /* ---------- Section nav ---------- */
+  .secnav{
+    position:sticky; top:0; z-index:40;
+    background:rgba(11,14,19,.88); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .secnav .wrap{display:flex; flex-wrap:wrap; gap:4px; padding-top:6px; padding-bottom:6px}
+  .secnav a{
+    flex:none; display:inline-flex; align-items:center; min-height:38px;
+    padding:6px 14px; border-radius:8px; text-decoration:none;
+    font-family:var(--font-display); font-size:13.5px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--muted);
+  }
+  .secnav a:hover{color:var(--text)}
+  .secnav a.active{color:#171106; background:var(--gold)}
+
+  /* ---------- Sections ---------- */
+  section{padding:72px 0}
+  @media (max-width:560px){ section{padding:52px 0} }
+  section.alt{background:var(--bg-2); border-block:1px solid var(--line-soft)}
+
+  .sec-head{max-width:720px; margin-bottom:36px}
+  .sec-head .no{
+    font-family:var(--font-display); font-size:13px; font-weight:800;
+    letter-spacing:.16em; color:var(--gold); text-transform:uppercase;
+  }
+  .sec-head h2{
+    font-family:var(--font-display); font-weight:800; letter-spacing:-.01em;
+    font-size:clamp(28px, 4.6vw, 40px); line-height:1.12; margin:10px 0 0;
+  }
+  .sec-head p{margin:12px 0 0; color:var(--muted); font-size:17px}
+
+  .about-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:28px; align-items:start}
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr} }
+  .about-copy p{margin:0 0 16px; color:#C9D1DC; font-size:17.5px; line-height:1.75}
+  .about-copy p:last-child{margin-bottom:0}
+  .about-copy strong{color:var(--text)}
+
+  .fact-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px;
+  }
+  .fact-card h3{
+    margin:0 0 14px; font-family:var(--font-display); font-size:13px; font-weight:800;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--gold);
+  }
+  .fact-row{display:flex; justify-content:space-between; gap:16px; padding:10px 0; border-top:1px solid var(--line-soft); font-size:15.5px}
+  .fact-row:first-of-type{border-top:none; padding-top:2px}
+  .fact-row span{color:var(--muted-2); flex:none}
+  .fact-row b{font-weight:600; text-align:right}
+  .markets{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+  .market{
+    font-family:var(--font-display); font-size:13px; font-weight:700; letter-spacing:.04em;
+    border:1px solid var(--line); border-radius:999px; padding:7px 13px; color:var(--text);
+    display:inline-flex; align-items:center; gap:7px; min-height:36px;
+  }
+  .market i{width:6px;height:6px;border-radius:50%;background:var(--gold); flex:none}
+
+  /* Services */
+  .svc-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px}
+  @media (max-width:760px){ .svc-grid{grid-template-columns:1fr} }
+  .svc{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; position:relative;
+  }
+  .svc .ic{
+    width:46px; height:46px; border-radius:11px; background:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center; margin-bottom:18px;
+  }
+  .svc .ic svg{width:23px; height:23px; color:var(--gold-2)}
+  .svc h3{margin:0; font-family:var(--font-display); font-size:20px; font-weight:800; line-height:1.25}
+  .svc p{margin:10px 0 0; color:var(--muted); font-size:16px; line-height:1.65}
+  .svc ul{margin:14px 0 0; padding:0; list-style:none}
+  .svc li{
+    display:flex; gap:9px; padding:5px 0; color:#C9D1DC; font-size:15.5px; line-height:1.5;
+  }
+  .svc li::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); flex:none; margin-top:9px}
+
+  /* Skills */
+  .comp-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:10px}
+  @media (max-width:900px){ .comp-grid{grid-template-columns:repeat(2, 1fr)} }
+  @media (max-width:540px){ .comp-grid{grid-template-columns:1fr} }
+  .comp{
+    display:flex; align-items:center; gap:12px;
+    background:var(--surface); border:1px solid var(--line); border-radius:10px;
+    padding:14px 16px; font-weight:600; font-size:15.5px; line-height:1.4; min-height:52px;
+  }
+  .comp svg{width:17px; height:17px; color:var(--gold); flex:none}
+
+  .tech-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:16px; margin-top:28px}
+  @media (max-width:760px){ .tech-grid{grid-template-columns:1fr} }
+  .tech{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px}
+  .tech h3{
+    margin:0 0 6px; font-family:var(--font-display); font-size:16px; font-weight:800;
+    display:flex; align-items:center; gap:10px;
+  }
+  .tech h3 .tag{
+    font-size:11px; letter-spacing:.12em; color:var(--gold); border:1px solid rgba(217,164,65,.4);
+    border-radius:999px; padding:3px 9px; font-weight:800;
+  }
+  .tech p{margin:8px 0 0; color:var(--muted); font-size:16px; line-height:1.65}
+  .platforms{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px}
+  .platform{
+    font-family:var(--font-display); font-size:13.5px; font-weight:700;
+    background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+    padding:8px 13px; display:inline-flex; align-items:center; min-height:38px;
+  }
+
+  /* Experience */
+  .timeline{position:relative; margin-left:8px; padding-left:34px; border-left:2px solid var(--line)}
+  .job{position:relative; padding-bottom:44px}
+  .job:last-child{padding-bottom:4px}
+  .job::before{
+    content:""; position:absolute; left:-43px; top:6px;
+    width:16px; height:16px; border-radius:50%;
+    background:var(--bg); border:3px solid var(--gold);
+  }
+  section.alt .job::before{background:var(--bg-2)}
+  .job .when{
+    display:inline-flex; align-items:center; min-height:32px;
+    font-family:var(--font-display); font-size:13px; font-weight:800; letter-spacing:.08em;
+    color:var(--gold-2); background:var(--gold-soft); border-radius:999px; padding:5px 13px;
+    text-transform:uppercase;
+  }
+  .job h3{margin:14px 0 0; font-family:var(--font-display); font-size:clamp(21px, 3vw, 26px); font-weight:800; line-height:1.25}
+  .job .co{margin:4px 0 0; color:var(--muted); font-weight:600; font-size:16.5px}
+  .job .co b{color:var(--text)}
+  .job ul{margin:16px 0 0; padding:0; list-style:none; max-width:760px}
+  .job li{display:flex; gap:11px; padding:6px 0; color:#C9D1DC; font-size:16.5px; line-height:1.6}
+  .job li::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gold); flex:none; margin-top:10px}
+
+  /* Education */
+  .edu{
+    display:flex; flex-wrap:wrap; gap:20px 28px; align-items:center;
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:28px;
+  }
+  .edu .ic{
+    width:54px; height:54px; border-radius:12px; background:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .edu .ic svg{width:27px; height:27px; color:var(--gold-2)}
+  .edu h3{margin:0; font-family:var(--font-display); font-size:22px; font-weight:800}
+  .edu p{margin:4px 0 0; color:var(--muted); font-size:16.5px}
+
+  /* Contact */
+  .contact-grid{display:grid; grid-template-columns:1.2fr 1fr; gap:28px; align-items:start}
+  @media (max-width:860px){ .contact-grid{grid-template-columns:1fr} }
+  .contact-copy p{color:var(--muted); font-size:17.5px; line-height:1.7; margin:0 0 22px; max-width:520px}
+  .contact-copy p strong{color:var(--text)}
+  .c-rows{display:grid; gap:12px}
+  .c-row{
+    display:flex; align-items:center; gap:16px;
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:18px 20px; text-decoration:none; transition:border-color .15s ease;
+  }
+  a.c-row:hover{border-color:var(--gold)}
+  .c-row .ic{
+    width:44px; height:44px; border-radius:10px; background:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .c-row .ic svg{width:21px; height:21px; color:var(--gold-2)}
+  .c-row .ic.wa{background:rgba(37,211,102,.14)}
+  .c-row .ic.wa svg{color:var(--green)}
+  .c-row small{display:block; color:var(--muted-2); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase}
+  .c-row b{display:block; font-size:17.5px; font-weight:700; margin-top:1px; word-break:break-all}
+  .c-row .copy{
+    margin-left:auto; flex:none; font-family:var(--font-display); font-size:12.5px; font-weight:800;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--muted);
+    border:1px solid var(--line); background:var(--bg); border-radius:8px;
+    padding:9px 13px; cursor:pointer; min-height:38px;
+  }
+  .c-row .copy:hover{color:var(--gold-2); border-color:var(--gold)}
+  .c-row .copy.done{color:#3ECF6E; border-color:#3ECF6E}
+
+  footer{
+    border-top:1px solid var(--line-soft); padding:28px 0 36px; background:var(--bg-2);
+  }
+  footer .wrap{display:flex; flex-wrap:wrap; gap:10px 24px; align-items:center; justify-content:space-between}
+  footer p{margin:0; color:var(--muted-2); font-size:14.5px}
+  footer .fname{font-family:var(--font-display); font-weight:800; color:var(--text); letter-spacing:.04em}
+  .to-top{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    font-family:var(--font-display); font-size:13px; font-weight:800; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--muted); min-height:40px; padding:6px 4px;
+  }
+  .to-top:hover{color:var(--gold-2)}
+
+  .reveal{opacity:0; transform:translateY(14px); transition:opacity .55s ease, transform .55s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .reveal{opacity:1; transform:none; transition:none}
+    .btn{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-grid-bg" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-top">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="loc">Johar Town, Lahore, Pakistan</span>
+      <span class="avail"><i aria-hidden="true"></i> Open to roles &amp; client work</span>
+    </div>
+
+    <h1>Naveed <span class="thin">Ahmad</span></h1>
+    <p class="hero-title">Digital Marketing Manager &nbsp;|&nbsp; Performance Marketing &nbsp;|&nbsp; E-commerce</p>
+    <p class="hero-sub">
+      E-commerce and digital marketing professional with <strong>7 years in Shopify store development,
+      e-commerce operations and mentorship</strong>, alongside <strong>5 years of hands-on digital marketing</strong> —
+      paid advertising, campaign planning, audience targeting and conversion-focused store optimization.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-wa" href="https://wa.me/923060697899?text=Hi%20Naveed%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.38-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28"/></svg>
+        WhatsApp Me
+      </a>
+      <a class="btn btn-gold" href="mailto:Ecombynaveed@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Email Me
+      </a>
+      <a class="btn btn-ghost" href="tel:+923060697899">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0306 0697899
+      </a>
+    </div>
+
+    <div class="hero-contact">
+      <a href="mailto:Ecombynaveed@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        Ecombynaveed@gmail.com
+      </a>
+      <a href="tel:+923060697899">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0306 0697899
+      </a>
+      <span style="display:inline-flex;align-items:center;gap:8px;min-height:36px">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:16px;height:16px;color:var(--gold)"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Johar Town, Lahore, Pakistan
+      </span>
+    </div>
+
+    <div class="stats" role="list" aria-label="Experience at a glance">
+      <div class="stat" role="listitem"><b>7 yrs</b><span>Shopify store development, e-commerce operations &amp; mentorship</span></div>
+      <div class="stat" role="listitem"><b>5 yrs</b><span>Hands-on digital marketing &amp; paid advertising</span></div>
+      <div class="stat" role="listitem"><b>5</b><span>Ad platforms — Meta, Google, TikTok, Snapchat &amp; X</span></div>
+      <div class="stat" role="listitem"><b style="font-size:clamp(20px,2.6vw,27px); padding-top:6px">PK · UAE · USA</b><span>Markets — open to roles &amp; client work</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ SECTION NAV ============ -->
+<nav class="secnav" aria-label="Portfolio sections">
+  <div class="wrap">
+    <a href="#about" data-nav>About</a>
+    <a href="#services" data-nav>Services</a>
+    <a href="#skills" data-nav>Skills</a>
+    <a href="#experience" data-nav>Experience</a>
+    <a href="#education" data-nav>Education</a>
+    <a href="#contact" data-nav>Contact</a>
+  </div>
+</nav>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="no">01 — About</div>
+      <h2>Stores that convert. Ads that perform.</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>
+          I am an <strong>e-commerce and digital marketing professional</strong> with 7 years of experience in
+          Shopify store development, e-commerce operations, and mentorship, alongside 5 years of hands-on
+          digital marketing experience.
+        </p>
+        <p>
+          My work covers the full growth loop: <strong>paid advertising, campaign planning, audience targeting,
+          budget monitoring, performance analysis</strong>, and <strong>conversion-focused store optimization</strong>.
+          I have managed Shopify stores end to end — from setup and theme customization to daily operations —
+          and coordinated teams while mentoring individuals in practical e-commerce workflows.
+        </p>
+        <p>
+          Based in Lahore, I am available for roles and client work in <strong>Pakistan, the UAE and the USA</strong> —
+          building stores, running campaigns, and helping brands turn traffic into customers.
+        </p>
+      </div>
+      <aside class="fact-card reveal" aria-label="Quick facts">
+        <h3>Quick Facts</h3>
+        <div class="fact-row"><span>Role</span><b>Digital Marketing Manager</b></div>
+        <div class="fact-row"><span>Focus</span><b>Performance Marketing · E-commerce</b></div>
+        <div class="fact-row"><span>Based in</span><b>Johar Town, Lahore</b></div>
+        <div class="fact-row"><span>Most recent</span><b>Digimerce</b></div>
+        <div class="fact-row"><span>Education</span><b>B.Sc. — University of Punjab</b></div>
+        <div style="margin-top:16px">
+          <div style="color:var(--muted-2); font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px">Open to work in</div>
+          <div class="markets">
+            <span class="market"><i aria-hidden="true"></i>Pakistan</span>
+            <span class="market"><i aria-hidden="true"></i>UAE</span>
+            <span class="market"><i aria-hidden="true"></i>USA</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="no">02 — Services</div>
+      <h2>What I can do for your business</h2>
+      <p>Four services built on seven years of store-side experience and five years of running paid campaigns.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg></div>
+        <h3>Shopify Store Development</h3>
+        <p>Complete store setup and management, built around clean navigation and a customer journey that leads to checkout.</p>
+        <ul>
+          <li>Store setup &amp; theme customization</li>
+          <li>Product listings &amp; collection management</li>
+          <li>Layout, navigation &amp; product presentation optimization</li>
+        </ul>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-7-4 18-6-4-3 4v-6L3 11z"/><path d="M11 15l4-4"/></svg></div>
+        <h3>Paid Ads Management</h3>
+        <p>Campaigns planned, launched and optimized across the major social and search platforms, with budgets watched closely.</p>
+        <ul>
+          <li>Meta (Facebook &amp; Instagram), Google, TikTok, Snapchat &amp; X Ads</li>
+          <li>Audience targeting strategies &amp; creative coordination</li>
+          <li>Budget monitoring &amp; performance analysis</li>
+        </ul>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/></svg></div>
+        <h3>E-commerce Operations</h3>
+        <p>Day-to-day store operations and conversion-focused optimization, guided by reach, traffic and conversion data.</p>
+        <ul>
+          <li>Daily store operations &amp; product management</li>
+          <li>Conversion-focused store optimization</li>
+          <li>Performance reviews — reach, engagement, traffic, conversions</li>
+        </ul>
+      </article>
+      <article class="svc reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Mentorship &amp; Team Training</h3>
+        <p>Practical, hands-on mentoring in Shopify store management and e-commerce workflows, plus team coordination.</p>
+        <ul>
+          <li>Shopify &amp; e-commerce workflow mentoring</li>
+          <li>Troubleshooting &amp; practical problem-solving support</li>
+          <li>Team coordination, training &amp; client communication</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="no">03 — Skills</div>
+      <h2>Core competencies</h2>
+    </div>
+    <div class="comp-grid reveal">
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Digital Marketing Strategy &amp; Campaign Planning</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Meta (Facebook &amp; Instagram) Ads</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Google Ads, TikTok Ads, Snapchat Ads &amp; X Ads</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Paid Advertising &amp; Campaign Optimization</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Audience Targeting &amp; Creative Coordination</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Budget Monitoring &amp; Performance Analysis</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Shopify Store Development &amp; Management</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>E-commerce Operations &amp; Product Management</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Conversion-Focused Store Optimization</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Team Coordination, Training &amp; Mentorship</div>
+      <div class="comp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Client Communication &amp; Relationship Management</div>
+    </div>
+
+    <div class="tech-grid">
+      <article class="tech reveal">
+        <h3><span class="tag">E-COMMERCE</span> Shopify</h3>
+        <p>Shopify setup, theme customization, product listing, collection management, store operations and optimization.</p>
+      </article>
+      <article class="tech reveal">
+        <h3><span class="tag">ADVERTISING</span> Paid Media Platforms</h3>
+        <p>Campaigns across five advertising platforms:</p>
+        <div class="platforms">
+          <span class="platform">Meta Ads</span>
+          <span class="platform">Google Ads</span>
+          <span class="platform">TikTok Ads</span>
+          <span class="platform">Snapchat Ads</span>
+          <span class="platform">X Ads</span>
+        </div>
+      </article>
+      <article class="tech reveal">
+        <h3><span class="tag">MARKETING</span> Campaign Craft</h3>
+        <p>Campaign planning, audience targeting, budget monitoring, performance analysis and optimization.</p>
+      </article>
+      <article class="tech reveal">
+        <h3><span class="tag">PROFESSIONAL</span> People &amp; Process</h3>
+        <p>Team coordination, mentorship, client communication and workflow management.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="no">04 — Experience</div>
+      <h2>Professional experience</h2>
+    </div>
+    <div class="timeline">
+      <article class="job reveal">
+        <span class="when">2024 — November 2026</span>
+        <h3>Digital Marketing Specialist</h3>
+        <p class="co"><b>Digimerce</b></p>
+        <ul>
+          <li>Planned, launched, and managed paid advertising campaigns across social media and search platforms.</li>
+          <li>Developed audience targeting strategies aligned with campaign objectives and coordinated advertising creatives.</li>
+          <li>Monitored campaign budgets and reviewed reach, engagement, website traffic, and conversions.</li>
+          <li>Analyzed campaign performance and identified opportunities to optimize targeting, creative direction, and campaign settings.</li>
+        </ul>
+      </article>
+      <article class="job reveal">
+        <span class="when">Digimerce</span>
+        <h3>E-commerce / Shopify Specialist &amp; Mentor</h3>
+        <p class="co"><b>Digimerce</b></p>
+        <ul>
+          <li>Set up and managed Shopify stores, including theme customization, product listings, collection management, and daily operations.</li>
+          <li>Optimized store layouts, product presentation, navigation, and customer journeys.</li>
+          <li>Mentored individuals in Shopify store management and e-commerce workflows, supporting troubleshooting and practical problem-solving.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION ============ -->
+<section id="education">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="no">05 — Education</div>
+      <h2>Education</h2>
+    </div>
+    <div class="edu reveal">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12.5V16c0 1.66 2.69 3 6 3s6-1.34 6-3v-3.5"/><path d="M22 10v6"/></svg></div>
+      <div>
+        <h3>Bachelor of Science (B.Sc.)</h3>
+        <p>University of Punjab</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="no">06 — Contact</div>
+      <h2>Let's work together</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-copy reveal">
+        <p>
+          Looking for a <strong>Digital Marketing Manager</strong> for your team, or a specialist to build and
+          grow your Shopify store? I am available for employers and clients in <strong>Pakistan, the UAE and the USA</strong>.
+          The fastest way to reach me is WhatsApp — or call or email any time.
+        </p>
+        <a class="btn btn-wa" href="https://wa.me/923060697899?text=Hi%20Naveed%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20an%20opportunity." target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.38-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="c-rows reveal">
+        <div class="c-row">
+          <div class="ic wa"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.83 9.83 0 0 0 12.04 2m0 18.13h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.14.16-.29.18-.54.06-.25-.13-1.05-.38-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.51.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.6.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28"/></svg></div>
+          <div><small>WhatsApp</small><b>+92 306 0697899</b></div>
+          <button class="copy" type="button" data-copy="+923060697899">Copy</button>
+        </div>
+        <a class="c-row" href="tel:+923060697899">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><small>Phone</small><b>0306 0697899</b></div>
+        </a>
+        <div class="c-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
+          <div><small>Email</small><b>Ecombynaveed@gmail.com</b></div>
+          <button class="copy" type="button" data-copy="Ecombynaveed@gmail.com">Copy</button>
+        </div>
+        <div class="c-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><small>Location</small><b>Johar Town, Lahore, Pakistan</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><span class="fname">NAVEED AHMAD</span> &nbsp;·&nbsp; Digital Marketing Manager | Performance Marketing | E-commerce</p>
+    <a class="to-top" href="#top">Back to top
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll reveal (respects reduced motion via CSS fallback + check here)
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var items = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  // Active section highlighting in the sticky nav
+  var links = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+  var sections = Object.keys(map).map(function(id){ return document.getElementById(id); }).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    var so = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          var a = map[e.target.id];
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-38% 0px -55% 0px' });
+    sections.forEach(function(s){ so.observe(s); });
+  }
+
+  // Copy buttons (email / WhatsApp number) — in-page feedback, no storage
+  document.querySelectorAll('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.getAttribute('data-copy');
+      var done = function(){
+        var old = btn.textContent;
+        btn.textContent = 'Copied';
+        btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); });
+      } else { fallback(); }
+      function fallback(){
+        var ta = document.createElement('textarea');
+        ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        try { document.execCommand('copy'); done(); } catch(e){}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
